@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+	   Own bed
+	</title>
+	<!------------all css link ----------------->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+		<link rel="icon" href="img/calicon.png" type="image/png" sizes="16x16">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/bed.css">
+		
+		<link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+		<link rel="stylesheet" href="css/material-design-iconic-font.css">
+		<link rel="stylesheet" href="fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Nunito:400,700|Days+One" rel="stylesheet">
+	    <link href="@import url('https://fonts.googleapis.com/css?family=Patua+One');" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">	
+	    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+
+
+<body>
+
+<!------------bed modal or popup---------------->
+    <div id="myModal" class="modal">
+	    <div class="modal-content">
+			<div class="modal-header">
+				<span style="cursor:pointer" class="close"  data-dismiss="modal"  aria-label="Close">&times;</span>
+				<h3 style="color:#4AA1FE">Added to basket</h3>
+			</div>
+		    <div class="modal-body">
+		        <form id="myform" action="cart.php" name="valuebed" method="POST">
+			        <div style="padding-left:10px;padding-right:10px;" class="row modal-side-name">
+						<div class="popup-price">
+							   <h4>Build Your Own Bed was added to your basket $<input readonly name="price"  id="price-label"></h4>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-5">    
+							<div class="popup-images" id="ee">
+								<input  name="flor" type="image" class="dynamic_image_items-modal" id="flor-modal"  src="https://res.cloudinary.com/furniturebuild/image/upload/v1618205522/2_idry3x.jpg" />
+						  
+								<input  name="right-box" type="image" class="dynamic_image_items-modal" id="right-box1" style="display:none;"  
+								src="https://res.cloudinary.com/furniturebuild/image/upload/v1618515299/grayboxr14_ptsdms.png" />
+								
+								<input name="huk" type="image" class="dynamic_image_items-modal" id="huk-modal"  src="https://res.cloudinary.com/furniturebuild/image/upload/v1618205579/2_dtdiju.png" />
+								  
+								<input name="header" type="image" class="dynamic_image_items-modal" id="header-modal"
+								src="https://res.cloudinary.com/furniturebuild/image/upload/v1618205664/2_kwbrfy.webp" />
+								
+								<input name="body" type="image" class="dynamic_image_items-modal" id="body-modal"  
+								src="https://res.cloudinary.com/furniturebuild/image/upload/v1618205418/2_ahcg84.webp"/>
+									  
+								<input name="box" type="image" class="dynamic_image_items-modal" id="storage-modal"  
+								src="https://res.cloudinary.com/furniturebuild/image/upload/v1618440607/graybox14_hfxg62.png "  style="display:none;"/>
+								  
+								<input name="box1" type="image" class="dynamic_image_items-modal" id="storage1-modal"  
+								src="https://res.cloudinary.com/furniturebuild/image/upload/v1618442013/box2_vijtrj.webp"  style="display:none;"  />
+								
+								<input name="box2" type="image" class="dynamic_image_items-modal" id="left-box1"  
+								src="https://res.cloudinary.com/furniturebuild/image/upload/v1618515299/grayboxr14_ptsdms.png"  style="display:none;"  />
+							</div>
+					    </div>
+						<div class="col-md-8 col-sm-8 col-xs-7 all-in">
+							<p>Size: <input readonly name="size" id="sizeFinal"> </p>
+							<p>headerboard: <input readonly name="headerboard" id="headerboard"></p>
+							<p>Colour: <input name="color" id="color"></p>
+							<p>Base&nbsp;Depth: <input readonly name="depth" id="depthFinal"></p>
+							<p>Storage&nbsp;Options: <input readonly name="box"  id="storageFinal"></p>
+						</div>				
+				    </div>
+					<div class="row shop-botton" style="padding-left:5px;padding-right:5px;"><hr>
+						<div class="col-md-6 col-sm-6 col-xs-6" style="padding-left:0;">
+						<button type="submit" id="imgget" class="btn btn-primary continue btn-lg btn-block">Continue Shopping</button>
+						</div>
+					   <div class="col-md-6 col-sm-6 col-xs-6 mobile-left" style="padding-right:0;">
+						<button type="submit" class="btn btn-primary check btn-lg btn-block" onclick="getData()">Go to Checkout</button>
+						</div>
+					</div>
+			    </form>
+		    </div>
+	    </div>
+    </div>
+<!-----------main bed build----------------->
+    <div class="container-fluid main-build-hole">
+        <div class="row">
+            <div class="col-md-7 col-sm-12 main-kkl">
+			<!-----------main bed build image----------------->
+				<div class="main-build">
+					<img class="dynamic_image_items" id="flor"  src="https://res.cloudinary.com/furniturebuild/image/upload/v1618205522/2_idry3x.jpg" />  
+					<img class="dynamic_image_items" id="right-box" style="display:none;"  
+					src="https://res.cloudinary.com/furniturebuild/image/upload/v1618515299/grayboxr14_ptsdms.png"  />
+					<img class="dynamic_image_items" id="huk"  src="https://res.cloudinary.com/furniturebuild/image/upload/v1618205579/2_dtdiju.png" />  
+					<img class="dynamic_image_items" id="header"
+					src="https://res.cloudinary.com/furniturebuild/image/upload/v1618205664/2_kwbrfy.webp" />
+					<img class="dynamic_image_items" id="body"  
+					src="https://res.cloudinary.com/furniturebuild/image/upload/v1618205418/2_ahcg84.webp" />
+					<img class="dynamic_image_items" id="storage"  
+					src="https://res.cloudinary.com/furniturebuild/image/upload/v1618440607/graybox14_hfxg62.png "  style="display:none;"/>
+						
+					<img class="dynamic_image_items" id="storage1"  
+					src="https://res.cloudinary.com/furniturebuild/image/upload/v1618442013/box2_vijtrj.webp"  style="display:none;"  />
+					<img class="dynamic_image_items" id="left-box"  
+					src="https://res.cloudinary.com/furniturebuild/image/upload/v1618515299/grayboxr14_ptsdms.png"  style="display:none;"  />
+				</div>
+            </div>
+
+<!-----------all option of bed----------------->
+		    <div class="col-md-5 col-sm-12 accordion">
+	<!-----------prize section----------------->
+				<div class="row all-price-drop">
+					<div class="col-md-6 col-sm-6  col-xs-6 price-side">
+						<h3 hidden>WAS: $<span id="wasPrice">200</span></h3>
+						<h1>Price: <span>£</span><span id='price'>300</span></h1>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-6 basket-side">
+						<button id="myBtn" style="float:right" type="button" class="btn btn-primary btn-lg">ADD TO BASKET</button>
+					</div>
+				</div>
+				
+    <!-----------main option of bed----------------->
+		        <div class="build-part">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+						    <div class="panel-heading" role="tab" id="headingOne">
+						        <h4 class="panel-title">
+							        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										<div class="row">
+											<div class="col-md-2 col-sm-2 col-xs-2">
+											<img src="images/ac-ef/size.svg">
+											</div>
+											<div class="col-md-5 col-sm-5 col-xs-5">
+											 <p class="ac-equifment"><span class="ac-head">Size</span><br><span id="sizeNameB" class="ac-name">Small Single 2ft 6</span></p>
+											
+											</div>
+											<div class="col-md-5 col-sm-5 col-xs-5">
+											  <span class="option">6 option avilable</span>
+											</div>
+							 			</div>
+							        </a>
+						        </h4>
+						    </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div  class="panel-body size-div">
+								   <button style="border:1px solid #F0386C" data-size="feet2" id="size-button-2">
+								   <img src="images/size/1.jpg"><br>
+								   <center><p class="dyncolor-name">Small Single 2ft 6</p></center>
+								   </button>
+								   <button data-size="feet2" data-name="feet26" id="size-button-2-6">
+								   <img src="images/size/single-3ft.jpg"><br>
+								   <center><p class="dyncolor-name">Single 3ft</p></center>
+								   </button>
+								   <button data-size="feet4" id="size-button-4">
+									<img src="images/size/small-double-4ft.jpg"><br>
+								   <center><p class="dyncolor-name">Small Double 4ft</p></center>
+									</button>
+									<button data-name="feet46" data-size="feet4" id="size-button-4-6">
+									<img src="images/size/double-4ft-6.jpg"><br>
+								   <center><p class="dyncolor-name">Double 4ft 6</p></center>
+								   </button>
+								   <button data-size="feet5" id="size-button-5">
+									<img src="images/size/5.webp"><br>
+								   <center><p class="dyncolor-name">King Size 5ft</p></center>
+								   </button>
+
+								   <button data-size="feet6" id="size-button-6"> 
+									<img src="images/size/6.webp"><br>
+								   <center><p class="dyncolor-name">King Size 6ft</p></center>
+								   </button>
+                
+                                </div>
+                            </div>
+                        </div>
+
+   
+                        <div class="panel panel-default">
+						    <div class="panel-heading" role="tab" id="headingTwo">
+						        <h4 class="panel-title">
+							        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										<div class="row">
+											<div class="col-md-2 col-sm-2 col-xs-2">
+											<img src="images/ac-ef/colour.svg">
+											</div>
+											<div class="col-md-5 col-sm-5 col-xs-5">
+											 <p class="ac-equifment"><span class="ac-head">Color</span><br><span id="colorNameB" class="ac-name">Slate Grey Cotton</span></p>
+											
+											</div>
+											<div class="col-md-5 col-sm-5 col-xs-5">
+											  <span class="option">23 option avilable</span>
+											</div>
+										</div>
+							
+							        </a>
+						        </h4>
+						    </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body color-body">
+							        <h3>Velvet</h3>
+									  <button id='graphite' data-color="graphite">
+										<img src="images/color/graphite-velvet.webp"><br>
+									   <center><p class="dyncolor-name">Graphite</p></center>
+									  </button>
+									  <button id='marine' data-color="marine">
+										<img src="images/color/blue-marine-velvet.png"><br>
+									   <center><p class="dyncolor-name">Blue Mrine</p></center>
+									  </button>
+									  <button id='emerald' data-color="emerald">
+										<img src="images/color/emerald-velvet.webp"><br>
+									   <center><p class="dyncolor-name">Emerald</p></center>
+									  </button>
+									  <button id='deggb' data-color="deggb">
+										<img src="images/color/duck-egg-blue-velvet.png"><br>
+									   <center><p class="dyncolor-name">Duck Egg <br> <br> <br>Blue</p></center>
+									  </button>
+									   <button id='silver' data-color="silver">
+										<img src="images/color/light-silver-velvet.png"><br>
+									   <center><p class="dyncolor-name">Light Silver</p></center>
+									  </button>
+									  <button id='pink' data-color="pink">
+										<img src="images/color/pink-velvet.png"><br>
+									   <center><p class="dyncolor-name">Pink</p></center>
+									  </button>
+									  <button id='asphalt' data-color="asphalt">
+										<img src="images/color/asphalt-velvet.webp"><br>
+									   <center><p class="dyncolor-name">Asphalt</p></center>
+									  </button>
+									  <button id='beige' data-color="beige">
+										<img src="images/color/beige-velvet.webp"><br>
+									   <center><p class="dyncolor-name">Beige</p></center>
+									  </button>
+									   <button id='mustard' data-color="mustard">
+										<img src="images/color/mustard-velvet.webp"><br>
+									   <center><p class="dyncolor-name">Mustard</p></center>
+									  </button>
+									   <button id='bpvelvet' data-color="bpvelvet">
+										<img src="images/color/black-velvet.webp"><br>
+									   <center><p class="dyncolor-name">velvet Black</p></center>
+									  </button>
+							
+							        <h3>Linen</h3>
+									  <button style="border:1px solid #F0386C" id='gray' data-color="gray">
+									   <img src="images/color/slate-grey-cotton.png"><br>
+									   <center><p class="dyncolor-name">Slate Grey</p></center>
+									  </button>
+									  <button id='black' data-color="black">
+										<img src="images/color/black-cotton.webp"><br>
+									   <center><p class="dyncolor-name">Black</p></center>
+									  </button>
+									   <button id='blue' data-color="blue">
+										<img src="images/color/midnight-blue-cotton.png"><br>
+									   <center><p class="dyncolor-name">Midnight Blue</p></center>
+									  </button>
+									  <button id='red' data-color="red">
+										<img src="images/color/red-cotton.png"><br>
+									   <center><p class="dyncolor-name">Red</p></center>
+									  </button>
+									  <button id='white' data-color="white">
+										<img src="images/color/white-cotton.png"><br>
+									   <center><p class="dyncolor-name">White</p></center>
+									  </button>
+									  <button id='lime' data-color="lime">
+										<img src="images/color/lime-cotton.png"><br>
+									   <center><p class="dyncolor-name">Lime</p></center>
+									  </button>
+									  <button id='duck' data-color="duck">
+										<img src="images/color/duck-egg-blue-cotton.png"><br>
+									   <center><p class="dyncolor-name">Duck Egg<br><br><br> Blue</p></center>
+									  </button>
+									  <button id='orchid' data-color="orchid">
+										<img src="images/color/orchid-cotton.png"><br>
+									   <center><p class="dyncolor-name">Orchid</p></center>
+									  </button>
+									  <button id='silgry' data-color="silgry">
+										<img src="images/color/silver-grey-cotton.png"><br>
+									   <center><p class="dyncolor-name">Silver Grey</p></center>
+									  </button>
+									  <button id='cream' data-color="cream">
+										<img src="images/color/cream-cotton.png"><br>
+									   <center><p class="dyncolor-name">Cream</p></center>
+									  </button>
+									   <button id='chocolate' data-color="chocolate">
+										<img src="images/color/chocolate-cotton.png"><br>
+									   <center><p class="dyncolor-name">Chocolate</p></center>
+									  </button>
+									  <button id='plum' data-color="plum">
+										<img src="images/color/plum-cotton.webp"><br>
+									   <center><p class="dyncolor-name">Plum</p></center>
+									  </button>
+									  <button id='charcoal' data-color="charcoal">
+										<img src="images/color/charcoal-cotton.webp"><br>
+									   <center><p class="dyncolor-name">Charcoal</p></center>
+									  </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+						    <div class="panel-heading" role="tab" id="headingThree">
+						        <h4 class="panel-title">
+							        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+										<div class="row">
+											<div class="col-md-2 col-sm-2 col-xs-2">
+											<img src="images/ac-ef/headboard.svg">
+											
+											</div>
+											<div class="col-md-5 col-sm-5 col-xs-5">
+											 <p class="ac-equifment"><span class="ac-head">Headboard</span><br><span class="ac-name" id="sapeNameB">Ankara Buttoned</span></p>
+											
+											</div>
+											<div class="col-md-5 col-sm-5 col-xs-5">
+											  <span class="option">21 option avilable</span>
+											
+											</div>
+											
+										</div>
+							        </a>
+						        </h4>
+						    </div>
+                           <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body hend-div">
+									  <button id="no" data-sape="no">
+									  No <br>Headerboard
+									  </button>
+									  <button id="sape-1" data-sape="sapex1">
+										<img src="images/hend/ankara.jpg"><br>
+										<center><p class="dyncolor-name"> Ankara Plain</p></center>
+									  </button>
+									  <button id="sape-1a" data-sape="sapex1a">
+										<img src="images/hend/ankara1.jpg"><br>
+										<center><p class="dyncolor-name"> Ankara Lined</p></center>
+									   
+									  </button>
+									  <button style="border:1px solid #F0386C" id="sape-1b" data-sape="sapex1b">
+										<img src="images/hend/ankara2.jpg"><br>
+										<center><p class="dyncolor-name">Ankara Buttoned</p></center>
+									   
+									  </button>
+									  <button id="sape-2a" data-sape="sapex2a">
+										<img src="images/hend/swanhill.jpg"><br>
+										<center><p class="dyncolor-name">Swanhill plain</p></center>
+									   
+									  </button>
+									  <button  id="sape-2b" data-sape="sapex2b">
+										<img src="images/hend/swanhill1.jpg"><br>
+										<center><p class="dyncolor-name">Swanhill Lined</p></center>
+									  
+									  </button>
+									  <button id="sape-2" data-sape="sapex2">
+										<img src="images/hend/swanhill2.jpg"><br>
+										<center><p class="dyncolor-name">Swanhill Buttoned</p></center>
+									   
+									  </button>
+									  <button  id="sape-3a" data-sape="sapex3a"> 
+										<img src="images/hend/cornell.jpg"><br>
+										<center><p class="dyncolor-name">Cornell Plain</p></center>
+									  
+									  </button>
+									  <button id="sape-3b" data-sape="sapex3b">
+										 <img src="images/hend/cornell1.jpg"><br>
+										<center><p class="dyncolor-name">Cornell Lined</p></center>
+									  
+									  </button>
+									   <button id="sape-3" data-sape="sapex3"> 
+										<img src="images/hend/cornell2.jpg"><br>
+										<center><p class="dyncolor-name">Cornell Buttoned</p></center>
+									   
+									  </button>
+									  
+									  
+									   <button id="sape-4" data-sape="sapex4">
+										<img src="images/hend/dudley.jpg"><br>
+										<center><p class="dyncolor-name">Dudley Plain</p></center>
+									  </button>
+									   <button id="sape-4a" data-sape="sapex4a"> 
+										<img src="images/hend/dudley1.jpg"><br>
+										<center><p class="dyncolor-name">Dudley Lined</p></center>
+									   
+									  </button>
+									  <button id="sape-4b" data-sape="sapex4b"> 
+										 <img src="images/hend/dudley2.jpg"><br>
+										<center><p class="dyncolor-name">Dudley Buttoned</p></center>
+									  
+									  
+									  </button>
+									  <button id="sape-5" data-sape="sapex5">
+									  <img src="images/hend/everest.jpg"><br>
+										<center><p class="dyncolor-name">Everest Plain</p></center>    
+									  </button>
+									  <button id="sape-5a" data-sape="sapex5a">
+									  <img src="images/hend/everest1.jpg"><br>
+										<center><p class="dyncolor-name">Everest Lined</p></center>    
+									  </button>
+									  <button id="sape-5b" data-sape="sapex5b">
+									  <img src="images/hend/everest2.jpg"><br>
+										<center><p class="dyncolor-name">Everest Buttoned</p></center>    
+									  </button>
+									  <button id="sape-6" data-sape="sapex6">
+									  <img src="images/hend/florence.jpg"><br>
+										<center><p class="dyncolor-name">Florence Plain</p></center>  
+									  </button>
+									  <button id="sape-6a" data-sape="sapex6a">
+									  <img src="images/hend/florence1.jpg"><br>
+										<center><p class="dyncolor-name">Florence Lined</p></center>    
+									  </button>
+									  <button id="sape-6b" data-sape="sapex6b">
+									  <img src="images/hend/florence2.jpg"><br>
+										<center><p class="dyncolor-name">Florence Buttoned</p></center>    
+									  </button>
+									 <button id="sape-7" data-sape="sapex7">
+									 <img src="images/hend/victor.jpg"><br>
+										<center><p class="dyncolor-name">Victor Plain</p></center>   
+									 </button>
+									 <button id="sape-7a" data-sape="sapex7a">
+									 <img src="images/hend/victor1.jpg"><br>
+										<center><p class="dyncolor-name">Victor Lined</p></center>   
+									 </button>
+									 <button id="sape-7b" data-sape="sapex7b">
+									 <img src="images/hend/victor2.jpg"><br>
+										<center><p class="dyncolor-name">Victor Buttoned</p></center>  
+									 </button>
+                                </div>
+                            </div>
+                        </div>
+                       <div class="panel panel-default">
+						    <div class="panel-heading" role="tab" id="headingFour">
+						        <h4 class="panel-title">
+							        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+										<div class="row">
+											<div class="col-md-2 col-sm-2 col-xs-2">
+											<img src="images/ac-ef/depth.svg">
+											
+											</div>
+											<div class="col-md-5 col-sm-5 col-xs-5">
+											 <p class="ac-equifment"><span class="ac-head">Base Depth</span><br><span class="ac-name"id="depthNameB">14"</span></p>
+											
+											</div>
+											<div class="col-md-5 col-sm-5 col-xs-5">
+											  <span class="option">3 option avilable</span>
+											
+											</div>
+											
+										</div>
+							        </a>
+						        </h4>
+						    </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseFour">
+								<div class="panel-body depth-div">
+								  <button id="depth-1" data-depth="depthx1">
+								   <img src="images/depth/6-inch.webp"><br>
+									<center><p class="dyncolor-name">6 Inch</p></center>
+								  </button>
+								  <button id="depth-2" data-depth="depthx2">
+									<img src="images/depth/10-inch.webp"><br>
+									<center><p class="dyncolor-name">10 Inch</p></center>
+								  </button>
+								   <button style="border:1px solid #F0386C" id="depth-3" data-depth="depthx3">
+									<img src="images/depth/14-inch.webp"><br>
+									<center><p class="dyncolor-name">14 Inch</p></center>
+									</button>
+								</div>
+					        </div>
+					    </div>
+                        <div class="panel panel-default">
+						    <div class="panel-heading" role="tab" id="headingFour">
+						        <h4 class="panel-title">
+							        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+										<div class="row">
+											<div class="col-md-2 col-sm-2 col-xs-2">
+											<img src="images/ac-ef/storage.svg">
+											
+											</div>
+											<div class="col-md-5 col-sm-5 col-xs-5">
+											 <p class="ac-equifment"><span class="ac-head">Storage Options</span><br><span class="ac-name" id="boxNameB">No Drawer</span></p>
+											
+											</div>
+											<div class="col-md-5 col-sm-5 col-xs-5">
+											  <span class="option">9 option avilable</span>
+											
+											</div>
+											
+										</div>
+							        </a>
+						        </h4>
+						    </div>
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseFive">
+                                <div class="panel-body storage-div">
+									<button id="storage-ottoman" data-storage="storageOttoman">
+									<img src="images/storage/ottoman.webp"><br>
+									<center><p class="dyncolor-name">Ottoman</p></center>
+									</button>
+									<button style="border:1px solid #F0386C" id="storage-0" data-storage="storagex0">
+									<img src="images/storage/no-drawers.webp"><br>
+									<center><p class="dyncolor-name">No Drawer</p></center>
+									</button>
+									<button id="storage-1" data-storage="storagex1">
+									<img src="images/storage/end-drawer.webp"><br>
+									<center><p class="dyncolor-name">End Drawer</p></center>
+									</button>
+									<button id="storage-2" data-storage="storagex2">
+									<img src="images/storage/end-drawer-with-2-mini-drawers.webp"><br>
+									<center><p class="dyncolor-name">End Drawer with 2 Mini<br> Drawers</p></center>
+									</button>
+									<button  id="storage-3" data-storage="storagex3">
+									 <img src="images/storage/2-drawers.webp"><br>
+									<center><p class="dyncolor-name">2 Drawer</p></center>
+									</button>
+									<button id="storage-4" data-storage="storagex4">
+									<img src="images/storage/2-drawers-with-2-mini-drawers.webp"><br>
+									<center><p class="dyncolor-name">2 Drawers with 2 Mini<br> Drawers</p></center>
+									</button>
+									<button id="storage-5" data-storage="storagex5">
+									<img src="images/storage/2-drawers-with-end-drawer.webp"><br>
+									<center><p class="dyncolor-name">2 Drawers with End<br> Drawers</p></center>
+									</button>
+									<button id="storage-6" data-storage="storagex6">
+									<img src="images/storage/2-drawers-same-side.webp"><br>
+									<center><p class="dyncolor-name">2 Drawers Same Side</p></center>
+									</button>
+									<button id="storage-7" data-storage="storagex7">
+									<img src="images/storage/4-drawers.webp"><br>
+									<center><p class="dyncolor-name">4 Drawers</p></center>
+									</button>
+               
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>	
+    </div>
+
+
+
+    <!------------all js link ----------------->
+    <script src="js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>       
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+  <script>$('body').css('padding-top', $('.all-header-section').outerHeight() + 'px')</script>
+</body>
+
+</html>
